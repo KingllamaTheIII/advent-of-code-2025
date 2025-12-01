@@ -1,7 +1,7 @@
 position = 50
 password = 0
 
-file = File.open('day1_1_input.txt', 'r')
+file = File.open('input.txt', 'r')
 
 file.each_line do |line|                      # Loop through the lines of the file
     direction = line[0]                       # Get the turn direction
