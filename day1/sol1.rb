@@ -1,13 +1,5 @@
-position = 50
-password = 0
 
-file = File.open('input.txt', 'r')
-
-file.each_line do |line|                          # Loop through the lines of the file
-    direction = line[0]                           # Get the turn direction
-    amount = line[1..-1].to_i                     # Get the integer value of the turn amount
-    original = amount
-
+def rotate(position, amount, direction)
     mod = direction == 'R' ? 1 : -1               # Get the 'modifier': 1 if right, -1 if left
 
     amount = amount - 100 * (amount / 100)        # Remove useless multiples of 100
@@ -18,7 +10,20 @@ file.each_line do |line|                          # Loop through the lines of th
     position = 100 + position if position < 0     # If position is negative return it to positive
     position = position - 100 if position >= 100  # If position is 100 or grater reduce it by 100
     
-    password+=1 if position == 0                  # Now if position is 0 add 1 to password
+    return position, position == 0 ? 1 : 0        # Now if position is 0 add return 1
+end
+
+position = 50
+password = 0
+
+file = File.open('input.txt', 'r')
+
+file.each_line do |line|                          # Loop through the lines of the file
+    direction = line[0]                           # Get the turn direction
+    amount = line[1..-1].to_i                     # Get the integer value of the turn amount
+
+    position, pass_mod = rotate(position, amount, direction)
+    password += pass_mod
 end
 
 puts password
