@@ -46,7 +46,7 @@ ids.each { |id|
     # Example: for bound 1020, half "10" gives palindrome "1010" ≤ 1020, so keep "10"
     right_half = (right_half.to_i - 1).to_s if (right_half + right_half).to_i > right_num
 
-    # Convert halves to integers for arithmetic
+    # Convert halves to integers
     left_half = left_half.to_i
     right_half = right_half.to_i
 
