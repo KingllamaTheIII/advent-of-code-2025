@@ -31,7 +31,7 @@ Each day has its own directory containing:
 | Day | Part 1 | Part 2 | Notes |
 |-----|--------|--------|-------|
 | 1   | ⭐     | ⭐     |       |
-| 2   |        |        |       |
+| 2   | ⭐     |        |       |
 | 3   |        |        |       |
 | ... |        |        |       |
 
